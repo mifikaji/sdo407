@@ -33,23 +33,22 @@ const Menu = () => {
 };
 
 function App(props) {
-	//console.log(props)
+	//console.log(props);
 	return (
 		<div className='container-fluid mt-5'>
-		<BrowserRouter>
-		<div className='row'>
-			<div className='col-sm-3'>
-				<Menu />
-			</div>
-
-			<div className='col-sm-9'>
-				<Route path='/profile' render={()=><Profile function={props.functions.key_getUser}/>} />
-				<Route path='/messages' component={Messages} />
-				<Route path='/settings' component={Settings} />
-				<Route path='/friends' render={()=><Friends function={props.functions.key_getUsers}/>} />
-			</div>
-		</div>
-		</BrowserRouter>
+			<BrowserRouter>
+				<div className='row'>
+					<div className='col-sm-3'>
+						<Menu />
+					</div>
+					<div className='col-sm-9'>
+						<Route path='/profile' render={() => <Profile function={props.functions.key_getUser} />}/>
+						<Route path='/messages' component={Messages} />
+						<Route path='/settings' component={Settings} />
+						<Route path='/friends'render={() => <Friends function={props.functions.key_getUsers} />}/>
+					</div>
+				</div>
+			</BrowserRouter>
 		</div>
 	);
 }
