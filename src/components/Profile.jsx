@@ -2,8 +2,10 @@ import React from "react";
 
 
 const Profile = (props) => {
-    let user=props.function()
-    console.log(user);
+    let userId=window.location.pathname.split("/")[2];
+    let user=props.function(userId);
+
+    console.log(userId);
 	return <div className="row">
         <div className="col-sm-3">
             <img src={user.avatar} alt="" width='90%'/>
